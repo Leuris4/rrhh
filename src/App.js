@@ -4,7 +4,10 @@ import { BrowserRouter,Routes, Route } from 'react-router-dom';
 import Login from './pages/login';
 import Navbar from './components/navbar';
 import Home from './pages/home';
-import modificarEmpleado from './pages/user_general/modificarEmpleado';
+import Contratacion from './pages/user_general/contratacion';
+import ModificarEmpleado from './pages/user_general/modificarEmpleado';
+import SolicitudPermisos from './pages/user_general/solicitudpermisos';
+import CrearUsuario from './pages/user_superadmin/crearUsuario';
 
 
 
@@ -17,6 +20,10 @@ function App(){
               <Route path="/" element={<Login />}/>
               <Route path="/login" element={<modificarEmpleado />}/>
               <Route path="inicio" element={<Home/>} /> 
+              <Route path="/contratacion" element={<Contratacion/>} /> 
+              <Route path="/modificarEmpleado" element={<ModificarEmpleado/>} /> 
+              <Route path="/solicitudPermisos" element={<SolicitudPermisos/>} /> 
+              <Route path="/crearUsuario" element={<CrearUsuario/>} /> 
             </Routes>
           </BrowserRouter>;
   

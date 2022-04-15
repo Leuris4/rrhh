@@ -8,6 +8,9 @@ import Contratacion from './pages/user_general/contratacion';
 import ModificarEmpleado from './pages/user_general/modificarEmpleado';
 import SolicitudPermisos from './pages/user_general/solicitudpermisos';
 import CrearUsuario from './pages/user_superadmin/crearUsuario';
+import ListadoUsuario from './pages/user_superadmin/listadoUsuario';
+import ListadoEmpleado from './pages/listadoEmpleado';
+import Permisos from './pages/user_admin/permisos';
 
 
 
@@ -24,6 +27,9 @@ function App(){
               <Route path="/modificarEmpleado" element={<ModificarEmpleado/>} /> 
               <Route path="/solicitudPermisos" element={<SolicitudPermisos/>} /> 
               <Route path="/crearUsuario" element={<CrearUsuario/>} /> 
+              <Route path="/usuarios" element={<ListadoUsuario/>} /> 
+              <Route path="/empleados" element={<ListadoEmpleado/>} /> 
+              <Route path="/permisos" element={<Permisos/>} /> 
             </Routes>
           </BrowserRouter>;
   

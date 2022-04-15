@@ -1,6 +1,6 @@
 .container {
     margin-top: 5%;
-    max-width: 50vw;
+    width: 60vw;
 }
 
 h1 {
@@ -9,4 +9,12 @@ h1 {
 
 button {
     margin-top: 4%;
+}
+
+#cedula {
+    height: min-content;
+}
+
+#autocompletado {
+    float: right;
 }

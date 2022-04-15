@@ -9,7 +9,7 @@ class Navbar extends React.Component{
                     <ul>
                         <li><Link to="/inicio">Inicio</Link></li>
                         <li><Link to="/contratacion">Contratación</Link></li>
-                        <li><Link to="/empleado">Listado de empleados</Link></li> {/*desvinculacion y pago de nomina impresion */}
+                        <li><Link to="/empleados">Listado de empleados</Link></li> {/*desvinculacion y pago de nomina impresion */}
                         <li><Link to="/permisos">Permisos</Link></li>
                     </ul>
                 </div>;

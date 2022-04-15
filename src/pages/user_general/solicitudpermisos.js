@@ -13,11 +13,11 @@ class solicitudPermisos extends React.Component{
                     </div>
                     <div class="col-md-6">
                         <label for="nombre" class="form-label">Inicio del permiso</label>
-                        <input type="text" class="form-control" id="fecha_inicio" placeholder="Fecha de inicio"/>
+                        <input type="date" class="form-control" id="fecha_inicio" placeholder="Fecha de inicio"/>
                     </div>
                     <div class="col-md-6">
                         <label for="apellido" class="form-label">Fin del permiso</label>
-                        <input type="text" class="form-control" id="fecha_fin" placeholder="Fecha de fin"/>
+                        <input type="date" class="form-control" id="fecha_fin" placeholder="Fecha de fin"/>
                     </div>
                     <div class="col-md-4">
                         <label for="tipoPermiso" class="form-label">Tipo de permiso</label>

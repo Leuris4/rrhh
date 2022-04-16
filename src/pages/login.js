@@ -16,7 +16,7 @@ class Login extends React.Component{
                            
                                 <form action="#" method="post" className="signin-form">
                                     <div className="form-input">
-                                        <input type="text" name="Username" placeholder="Nombre de usuario" required autofocus />
+                                        <input type="text" name="Username" placeholder="Nombre de usuario" required autoFocus />
                                     </div>
                                     <div className="form-input">
                                         <input type="password" name="password" placeholder="Contraseña" required/>

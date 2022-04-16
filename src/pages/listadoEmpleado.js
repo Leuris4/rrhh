@@ -33,8 +33,8 @@ class listadoEmpleado extends React.Component{
                                     <div class="btn-group">
                                         <button id="drpdown-toggle" class="btn btn-light btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"></button>
                                         <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#">Editar</a></li>
-                                            <li><a class="dropdown-item" href="#">Desvincular</a></li>
+                                            <li><a class="dropdown-item">Editar</a></li>
+                                            <li><a class="dropdown-item">Desvincular</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -50,8 +50,8 @@ class listadoEmpleado extends React.Component{
                                     <p>Soporte técnico</p>
                                     <button id="drpdown-toggle" class="btn btn-light btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"></button>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Editar</a></li>
-                                        <li><a class="dropdown-item" href="#">Desvincular</a></li>
+                                        <li><a class="dropdown-item" >Editar</a></li>
+                                        <li><a class="dropdown-item" >Desvincular</a></li>
                                     </ul>
                                 </div>
                             </td>
@@ -66,8 +66,8 @@ class listadoEmpleado extends React.Component{
                                     <p>Soporte técnico</p>
                                     <button id="drpdown-toggle" class="btn btn-light btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"></button>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Editar</a></li>
-                                        <li><a class="dropdown-item" href="#">Desvincular</a></li>
+                                        <li><a class="dropdown-item" >Editar</a></li>
+                                        <li><a class="dropdown-item" >Desvincular</a></li>
                                     </ul>
                                 </div>
                             </td>

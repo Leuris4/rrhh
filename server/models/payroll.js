@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-// create student schema & model
+
 const PayrollSchema = new Schema({
     employee_id: {
         type: String,

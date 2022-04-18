@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from 'react-router-dom'
 import '../pages/resources/css/listadoEmpleado.css';
 
 class listadoEmpleado extends React.Component{
@@ -7,8 +8,8 @@ class listadoEmpleado extends React.Component{
             <div className="head">
                 <h1>Listado de empleados</h1>
                 <div id="btns">
-                    <button type="button" id="pagar" class="btn btn-success">Pagar</button>
-                    <button type="button" id="imprimir-nomina" class="btn btn-secondary">Imprimir nómina</button>
+                    <button type="button" id="pagar" className="btn btn-success">Pagar</button>
+                    <button type="button" id="imprimir-nomina" className="btn btn-secondary">Imprimir nómina</button>
                 </div>
             </div>
                 <table className="table table-striped table-hover">
@@ -30,48 +31,17 @@ class listadoEmpleado extends React.Component{
                             <td>
                                 <div className="input-group mb-3">
                                     <p>Soporte técnico</p>
-                                    <div class="btn-group">
-                                        <button id="drpdown-toggle" class="btn btn-light btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"></button>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item">Editar</a></li>
-                                            <li><a class="dropdown-item">Desvincular</a></li>
+                                    <div className="btn-group">
+                                        <button id="drpdown-toggle" className="btn btn-light btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"></button>
+                                        <ul className="dropdown-menu">
+                                        <li><Link to="/modificarEmpleado" className="dropdown-item">Editar</Link></li>
+                                        <li><Link to="" className="dropdown-item">Desvincular</Link></li>
                                         </ul>
                                     </div>
                                 </div>
                             </td>
                         </tr>
-                        <tr>
-                            <td>402-1260156-7</td>
-                            <td>Leuris Joel</td>
-                            <td>Morel Nuñez</td>
-                            <td>Tecnología</td>
-                            <td>
-                                <div className="input-group mb-3">
-                                    <p>Soporte técnico</p>
-                                    <button id="drpdown-toggle" class="btn btn-light btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"></button>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" >Editar</a></li>
-                                        <li><a class="dropdown-item" >Desvincular</a></li>
-                                    </ul>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>402-1260156-7</td>
-                            <td>Leuris Joel</td>
-                            <td>Morel Nuñez</td>
-                            <td>Tecnología</td>
-                            <td>
-                                <div className="input-group mb-3">
-                                    <p>Soporte técnico</p>
-                                    <button id="drpdown-toggle" class="btn btn-light btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"></button>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" >Editar</a></li>
-                                        <li><a class="dropdown-item" >Desvincular</a></li>
-                                    </ul>
-                                </div>
-                            </td>
-                        </tr>
+                        
                     </tbody>
                 </table>
             </div>

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-// create student schema & model
+
 const EmployeeSchema = new Schema({
     name: {
         type: String,
@@ -31,6 +31,6 @@ const EmployeeSchema = new Schema({
 });
 
 
-const Employee = mongoose.model('employee',EmployeeSchema);
+const Employee = mongoose.model('employees',EmployeeSchema);
 
 module.exports = Employee;

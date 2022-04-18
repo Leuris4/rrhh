@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter,Routes, Route } from 'react-router-dom';
-import Login from './pages/login';
+import { BrowserRouter,Routes, Route, Navigate } from 'react-router-dom';
+
 import Navbar from './components/navbar';
 import Home from './pages/home';
 import Contratacion from './pages/user_general/contratacion';
@@ -15,13 +15,13 @@ import Permisos from './pages/user_admin/permisos';
 
 
 
-function App(){
+function App(props){
+  
 
     return <BrowserRouter>
-            <Navbar/>
+            <Navbar islogged = {props.islogged} />
+
             <Routes>
-              <Route path="/" element={<Login />}/>
-              <Route path="/login" element={<Login />}/>
               <Route path="inicio" element={<Home/>} /> 
               <Route path="/contratacion" element={<Contratacion/>} /> 
               <Route path="/modificarEmpleado" element={<ModificarEmpleado/>} /> 
@@ -30,6 +30,7 @@ function App(){
               <Route path="/usuarios" element={<ListadoUsuario/>} /> 
               <Route path="/empleados" element={<ListadoEmpleado/>} /> 
               <Route path="/permisos" element={<Permisos/>} /> 
+              <Route path="*" element={<Home />}></Route>
             </Routes>
           </BrowserRouter>;
   

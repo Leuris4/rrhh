@@ -3,9 +3,11 @@ import '../pages/resources/css/home.css';
 
 class Home extends React.Component{
     render(){
+
         return <div className="container">
             <h3>Cantidad de empleados: <span>1</span></h3>
             <div className="container">
+                
         <h1>Listado de usuarios</h1>
                 <table className="table table-striped table-hover">
                     <thead>

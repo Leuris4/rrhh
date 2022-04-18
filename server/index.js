@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 
 const app = express();
@@ -12,6 +13,9 @@ app.use(express.static('public'));
 
 app.use(express.json());
 
+app.use(cors({
+    origin: "*"
+}));
 app.use('/api',require('./routes/api'));
 
 

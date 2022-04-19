@@ -17,6 +17,7 @@ import Login from './pages/login';
 
 function App(){
   const [logueado, setlogueado] = useState(false)
+  const [rol, setRol] = useState("")
   
   const islogged = () =>{
       let data =  document.cookie.split(";");
@@ -24,8 +25,10 @@ function App(){
           // no hay cookies
       }else{
           let id =  data[0].split("=");          
+          let rol =  data[1].split("=");          
           if(id[1].length !== 0 ){
             setlogueado(true);
+            setRol(rol[1]);
           }
       }  
     }
@@ -38,7 +41,7 @@ function App(){
 
     if(logueado){
       return <BrowserRouter>
-            <Navbar islogged = {logueado} />
+            <Navbar islogged = {logueado} rol = {rol} />
             <Routes>
               <Route path="/" element={<Login/>} /> 
               <Route path="/login" element={<Login/>} /> 

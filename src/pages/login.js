@@ -19,7 +19,6 @@ class Login extends React.Component{
     islogged = () =>{
         let data =  document.cookie.split(";");
         if(data.length ===1){
-
         }else{
             let id =  data[0].split("=");
             if(id[1].length !== 0 ){
@@ -91,7 +90,7 @@ class Login extends React.Component{
     }
 
     componentDidMount(){
-        setInterval(this.islogged(),1000);
+        setInterval(this.islogged(),100);
     }
 }
 

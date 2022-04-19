@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect,useState } from 'react';
 import './App.css';
 
 import { BrowserRouter,Routes, Route } from 'react-router-dom';
@@ -16,13 +16,33 @@ import Login from './pages/login';
 
 
 function App(){
+  const [logueado, setlogueado] = useState(false)
   
-    return <BrowserRouter>
-            <Navbar />
+  const islogged = () =>{
+      let data =  document.cookie.split(";");
+      if(data.length ===1){
+          // no hay cookies
+      }else{
+          let id =  data[0].split("=");          
+          if(id[1].length !== 0 ){
+            setlogueado(true);
+          }
+      }  
+    }
+ 
+    useEffect(() => {
+      setInterval(() => {
+        islogged();
+      }, 100);
+    }, []);
+
+    if(logueado){
+      return <BrowserRouter>
+            <Navbar islogged = {logueado} />
             <Routes>
               <Route path="/" element={<Login/>} /> 
               <Route path="/login" element={<Login/>} /> 
-              <Route path="/inicio" element={<Home/>} /> 
+              <Route path="/inicio" element={<Home />} /> 
               <Route path="/contratacion" element={<Contratacion/>} /> 
               <Route path="/solicitudPermisos" element={<SolicitudPermisos/>} /> 
               <Route path="/crearUsuario" element={<CrearUsuario/>} /> 
@@ -33,6 +53,15 @@ function App(){
               <Route path="*" element={<Home />}></Route>
             </Routes>
           </BrowserRouter>;
+    }else{
+      return <BrowserRouter>
+              <Routes>
+                      <Route path="/" element={<Login/>} /> 
+                      <Route path="/login" element={<Login/>} /> 
+                      <Route path="*" element={<Login />}></Route>
+                    </Routes>
+              </BrowserRouter>;
+    }
   
 }
 

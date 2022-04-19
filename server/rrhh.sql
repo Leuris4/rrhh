@@ -5,7 +5,7 @@
 -- Servidor: localhost
 -- Tiempo de generación: 11-04-2022 a las 20:00:21
 -- Versión del servidor: 8.0.18
--- Versión de PHP: 7.3.11
+-- Versión de PHP: 7.3.11;
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;

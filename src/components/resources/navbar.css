@@ -1,10 +1,13 @@
+.navMenu{
+    background-color: rgb(34, 34, 34);
+}
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     border: 1px solid #e7e7e7;
-    background-color: #f3f3f3;
+    background-color: rgb(192, 192, 192);
 }
 
 li {
@@ -24,14 +27,13 @@ li a {
 
 li a:hover:not(.active) {
     background-color: #ddd;
+    font-weight: 500;
 }
 
-li a.active {
-    color: white;
-    background-color: #4CAF50;
-}
+
 
 .active {
-    color: white;
-    background-color: #4CAF50;
+    background-color: #ddd;
+  
+   
 }

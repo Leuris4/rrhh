@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-import { BrowserRouter,Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter,Routes, Route } from 'react-router-dom';
 
 import Navbar from './components/navbar';
 import Home from './pages/home';
@@ -12,6 +12,8 @@ import CrearUsuario from './pages/user_superadmin/crearUsuario';
 import ListadoUsuario from './pages/user_superadmin/listadoUsuario';
 import ListadoEmpleado from './pages/listadoEmpleado';
 import Permisos from './pages/user_admin/permisos';
+import Logout from './pages/logout';
+
 
 
 
@@ -32,6 +34,7 @@ function App(props){
               <Route path="/usuarios" element={<ListadoUsuario/>} /> 
               <Route path="/empleados" element={<ListadoEmpleado/>} /> 
               <Route path="/permisos" element={<Permisos/>} /> 
+              <Route path="/logout" element={<Logout/>} /> 
               <Route path="*" element={<Home />}></Route>
             </Routes>
           </BrowserRouter>;

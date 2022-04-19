@@ -14,6 +14,7 @@ class Navbar extends React.Component{
                 <li><Link to="/contratacion">Contratación</Link></li>
                 <li><Link to="/empleados">Listado de empleados</Link></li> {/*desvinculacion y pago de nomina impresion */}
                 <li><Link to="/permisos">Permisos</Link></li>
+                <li className="right"><Link to="/logout"><i className='fa fa-power-off'></i></Link></li>
             </ul>
             </div>;
               

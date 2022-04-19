@@ -3,6 +3,11 @@ const Schema = mongoose.Schema;
 
 
 const EmployeeSchema = new Schema({
+    cedula: {
+        type: String,
+        required: [true, 'name field is required'],
+        unique: [true, 'Ya existe un empleado con esta cédula']
+    },
     name: {
         type: String,
         required: [true, 'name field is required']

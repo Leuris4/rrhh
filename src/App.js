@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+
 import { BrowserRouter,Routes, Route, Navigate } from 'react-router-dom';
 
 import Navbar from './components/navbar';
@@ -11,6 +12,7 @@ import CrearUsuario from './pages/user_superadmin/crearUsuario';
 import ListadoUsuario from './pages/user_superadmin/listadoUsuario';
 import ListadoEmpleado from './pages/listadoEmpleado';
 import Permisos from './pages/user_admin/permisos';
+
 
 
 

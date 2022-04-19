@@ -1,28 +1,37 @@
 import React from 'react';
-import {Link, Navigate } from 'react-router-dom';
 import App from '../App';
-
 import '../pages/resources/css/login.css'
 
 
 
+
 class Login extends React.Component{
+
     constructor(props){
         super(props);
         this.state = {islogged:false};
-
+      
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.islogged = this.islogged.bind(this)
+    }
+
+    islogged = () =>{
+       if(document.cookie.length != 0){
+          this.setState({islogged: true});
+       }
     }
 
     getData(user,password){
         fetch('http://localhost:4000/api/user/'+user+'/'+password)
         .then(response => response.json())
         .then(data =>{
-            if(data.length == 0){
+            if(data.length === 0){
                 console.log("no")
             }else{
-                this.setState({islogged:true})
+                document.cookie = "_id="+data.employee_id+"; path=/";
+                document.cookie = "_rol="+data.rol+"; path=/";
+                //this.setState({islogged:true})
             }
 
         });
@@ -42,13 +51,14 @@ class Login extends React.Component{
             return <App islogged = {this.state.islogged}/>
         }else{
             return <section className="w3l-login">
+               
                         <div className="overlay">
                             <div className="wrapper">
                                 <div className="logo">
                                         {/* <Link to="/" className="brand-logo">Gestión RRHH</Link> */}
                                 </div>
                                 <div className="form-section">
-                                    <h3>Iniciar Sesión</h3>
+                                    <h3>Iniciar Sesión </h3>
                             
                                     <form onSubmit={this.handleSubmit}  className="signin-form">
                                         <div className="form-input">
@@ -72,6 +82,10 @@ class Login extends React.Component{
                         <div id='stars3'></div>
                     </section>;
         }
+    }
+
+    componentDidMount(){
+        this.islogged()
     }
 }
 

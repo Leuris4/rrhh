@@ -28,9 +28,9 @@ class Permisos extends React.Component{
                             <td>31/04/2022</td>
                             <td>Vacaciones</td>
                             <td>
-                                <div class="d-grid gap-2 d-md-block">
-                                    <button class="btn btn-success btn-sm" type="button">Autorizar</button>
-                                    <button class="btn btn-danger btn-sm" type="button">Rechazar</button>
+                                <div className="d-grid gap-2 d-md-block">
+                                    <button className="btn btn-success btn-sm" type="button">Autorizar</button>
+                                    <button className="btn btn-danger btn-sm" type="button">Rechazar</button>
                                 </div>
                             </td>
                         </tr>
@@ -43,9 +43,9 @@ class Permisos extends React.Component{
                             <td>31/04/2022</td>
                             <td>Vacaciones</td>
                             <td>
-                                <div class="d-grid gap-2 d-md-block">
-                                    <button class="btn btn-success btn-sm" type="button">Autorizar</button>
-                                    <button class="btn btn-danger btn-sm" type="button">Rechazar</button>
+                                <div className="d-grid gap-2 d-md-block">
+                                    <button className="btn btn-success btn-sm" type="button">Autorizar</button>
+                                    <button className="btn btn-danger btn-sm" type="button">Rechazar</button>
                                 </div>
                             </td>
                         </tr>
@@ -58,9 +58,9 @@ class Permisos extends React.Component{
                             <td>31/04/2022</td>
                             <td>Vacaciones</td>
                             <td>
-                                <div class="d-grid gap-2 d-md-block">
-                                    <button class="btn btn-success btn-sm" type="button">Autorizar</button>
-                                    <button class="btn btn-danger btn-sm" type="button">Rechazar</button>
+                                <div className="d-grid gap-2 d-md-block">
+                                    <button className="btn btn-success btn-sm" type="button">Autorizar</button>
+                                    <button className="btn btn-danger btn-sm" type="button">Rechazar</button>
                                 </div>
                             </td>
                         </tr>

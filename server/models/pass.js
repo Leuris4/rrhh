@@ -17,8 +17,12 @@ const PassSchema = new Schema({
     },
     approval: {
         type: Boolean,
+        default: false
     },
     approval_date: {
+        type: Date,
+    },
+    pass_type_id: {
         type: Date,
     }
    

@@ -1,5 +1,6 @@
 import React from 'react';
-import App from '../App';
+import { Navigate } from 'react-router-dom';
+
 import '../pages/resources/css/login.css'
 
 
@@ -10,7 +11,6 @@ class Login extends React.Component{
     constructor(props){
         super(props);
         this.state = {islogged:false};
-      
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.islogged = this.islogged.bind(this)
@@ -18,10 +18,14 @@ class Login extends React.Component{
 
     islogged = () =>{
         let data =  document.cookie.split(";");
-        let id =  data[0].split("=");
-       if(id[1].length !== 0 ){
-          this.setState({islogged: true});
-       }
+        if(data.length ===1){
+
+        }else{
+            let id =  data[0].split("=");
+            if(id[1].length !== 0 ){
+                this.setState({islogged: true});
+            }
+        }  
     }
 
     getData(user,password){
@@ -50,7 +54,7 @@ class Login extends React.Component{
 
     render() {
         if(this.state.islogged){
-            return <App islogged = {this.state.islogged}/>
+            return <Navigate to="/inicio"></Navigate>
         }else{
             return <section className="w3l-login">
                
@@ -87,7 +91,7 @@ class Login extends React.Component{
     }
 
     componentDidMount(){
-        this.islogged()
+        setInterval(this.islogged(),1000);
     }
 }
 

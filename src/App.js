@@ -12,20 +12,17 @@ import ListadoUsuario from './pages/user_superadmin/listadoUsuario';
 import ListadoEmpleado from './pages/listadoEmpleado';
 import Permisos from './pages/user_admin/permisos';
 import Logout from './pages/logout';
+import Login from './pages/login';
 
 
-
-
-
-
-function App(props){
+function App(){
   
-
     return <BrowserRouter>
-            <Navbar islogged = {props.islogged} />
-
+            <Navbar />
             <Routes>
-              <Route path="inicio" element={<Home/>} /> 
+              <Route path="/" element={<Login/>} /> 
+              <Route path="/login" element={<Login/>} /> 
+              <Route path="/inicio" element={<Home/>} /> 
               <Route path="/contratacion" element={<Contratacion/>} /> 
               <Route path="/solicitudPermisos" element={<SolicitudPermisos/>} /> 
               <Route path="/crearUsuario" element={<CrearUsuario/>} /> 

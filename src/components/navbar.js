@@ -4,8 +4,26 @@ import { Link } from 'react-router-dom';
 
 
 class Navbar extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {islogged:false};
+        this.islogged = this.islogged.bind(this)
+    }
+
+    islogged = () =>{
+        let data =  document.cookie.split(";");
+        if(data.length ===1){
+
+        }else{
+            let id =  data[0].split("=");
+            if(id[1].length !== 0 ){
+                this.setState({islogged: true});
+            }
+        }  
+    }
+
     render() {
-       if(!this.props.islogged){
+       if(!this.state.islogged){
             return null
        }
             return <div className="navMenu">
@@ -18,6 +36,11 @@ class Navbar extends React.Component{
             </ul>
             </div>;
               
+    }
+    componentDidMount(){
+        setInterval(() => {
+           this.islogged();
+          }, 100);
     }
 }
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 import '../pages/resources/css/login.css'
 
@@ -32,7 +33,11 @@ class Login extends React.Component{
         .then(response => response.json())
         .then(data =>{
             if(data.length === 0){
-                console.log("no")
+                Swal.fire(
+                    'Credenciales Incorrectos',
+                    'usuario o contraseña incorrecto',
+                    'error'
+                  )
             }else{
                 document.cookie = "_id="+data.employee_id+"; path=/";
                 document.cookie = "_rol="+data.rol+"; path=/";

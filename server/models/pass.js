@@ -23,7 +23,7 @@ const PassSchema = new Schema({
         type: Date,
     },
     pass_type_id: {
-        type: Date,
+        type: String,
     }
    
 });

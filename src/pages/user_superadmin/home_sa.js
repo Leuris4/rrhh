@@ -1,13 +1,14 @@
 import React from "react";
-import '../user_superadmin/resources/css/listadoUsuarios.css'
+import '../user_superadmin/resources/css/crearUsuario.css';
 
-class listadoUsuario extends React.Component{
+class Home_sa extends React.Component{
 
     constructor(props){
         super(props);
         this.state ={data:[]};
         this.getUsers();
         this.users = [];
+        this.cant = 0;
     }
 
 
@@ -19,6 +20,7 @@ class listadoUsuario extends React.Component{
 
             }else{
                 data.map((datos) =>{
+                    this.cant++;
                     fetch('http://localhost:4000/api/employee/dt/' + datos.employee_id)
                     .then(response => response.json())
                     .then(dt =>{
@@ -57,7 +59,11 @@ class listadoUsuario extends React.Component{
     }
 
     render(){
+
         return <div className="container">
+            <h3>Cantidad de usuarios: <span>{this.cant}</span></h3>
+            <div className="container">
+                
         <h1>Listado de usuarios</h1>
                 <table className="table table-striped table-hover">
                     <thead>
@@ -71,20 +77,20 @@ class listadoUsuario extends React.Component{
                     </thead>
                     <tbody>
                         {this.state.data.map((user,index)=>
-                            {
-                                return <tr key={index}>
-                                    <td>{user.cedula}</td>
-                                    <td>{user.name}</td>
-                                    <td>{user.lastname}</td>
-                                    <td>{user.rol}</td>
-                                    <td>{user.last_seen}</td>
-                                </tr> 
-                            }
-                        )}
+                                {
+                                    return <tr key={index}>
+                                        <td>{user.cedula}</td>
+                                        <td>{user.name}</td>
+                                        <td>{user.lastname}</td>
+                                        <td>{user.rol}</td>
+                                        <td>{user.last_seen}</td>
+                                    </tr> 
+                                }
+                            )}
                     </tbody>
                 </table>
             </div>
+        </div>
     }
 }
-
-export default listadoUsuario;
+export default Home_sa;

@@ -37,7 +37,16 @@ router.delete('/employee/:id',function(req,res,next){
 
 //find employee id by cedula
 router.get('/employee/id/:cedula',function(req,res,next){
-    User.findOne({cedula: req.params.cedula }, {projection:{_id: 1}}).then(function(e){
+    Employee.findOne({cedula: req.params.cedula, status: true }, {projection:{_id: 1}}).then(function(e){
+       if(e==null){
+           e= []
+       }
+       res.send(e);
+    }).catch();
+});
+
+router.get('/employee/dt/:cedula',function(req,res,next){
+    Employee.findOne({cedula: req.params.cedula, status: true }).then(function(e){
        if(e==null){
            e= []
        }

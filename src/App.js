@@ -9,7 +9,6 @@ import Contratacion from './pages/user_general/contratacion';
 import SolicitudPermisos from './pages/user_general/solicitudpermisos';
 import CrearUsuario from './pages/user_superadmin/crearUsuario';
 import ListadoUsuario from './pages/user_superadmin/listadoUsuario';
-import Home_sa from './pages/user_superadmin/home_sa';
 import ListadoEmpleado from './pages/listadoEmpleado';
 import Permisos from './pages/user_admin/permisos';
 import Logout from './pages/logout';
@@ -46,8 +45,7 @@ function App(){
             <Routes>
               <Route path="/" element={<Login/>} /> 
               <Route path="/login" element={<Login/>} /> 
-              <Route path="/inicio" element={<Home />} /> 
-              <Route path="/inicio_sa" element={<Home_sa />} /> 
+              <Route path="/inicio" element={<Home rol = {rol}/>} /> 
               <Route path="/contratacion" element={<Contratacion/>} /> 
               <Route path="/solicitudPermisos" element={<SolicitudPermisos/>} /> 
               <Route path="/crearUsuario" element={<CrearUsuario/>} /> 

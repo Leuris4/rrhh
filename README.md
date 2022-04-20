@@ -9,6 +9,8 @@
  - npm install express --save
  - npm install --save-dev nodemon
  - npm install mongoose --save
+ - npm install sweetalert2
+ - npm install react-input-mask --save
 
 
  ## NOTES

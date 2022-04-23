@@ -22,7 +22,8 @@ class Navbar extends React.Component{
            
             <li><Link to="/empleados">Listado de empleados</Link></li> 
             <li><Link to="/solicitudPermisos">Solicitud Permisos</Link></li>
-            <li><Link to="/contratacion">Contratación</Link></li></>
+            <li><Link to="/contratacion">Contratación</Link></li>
+            <li><a href="https://suir.gob.do/Login.aspx?log=r" target="_blank">Pagar TSS</a></li></>
         }
     }
     render() {

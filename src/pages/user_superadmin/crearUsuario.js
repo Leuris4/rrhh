@@ -1,6 +1,7 @@
 import React from "react";
 import '../user_superadmin/resources/css/crearUsuario.css';
 import InputMask from 'react-input-mask';
+import Swal from 'sweetalert2';
 
 class crearUsuario extends React.Component{
 
@@ -32,10 +33,28 @@ class crearUsuario extends React.Component{
                     }
                 }).then(res => res.json())
                 .catch(error => console.log("error: " + error))
-                .then(response => console.log("Success: " + JSON.stringify(response)));
+                .then(response => {
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Usuario creado correctamente',
+                        showConfirmButton: false,
+                        timer: 1500
+                      })
+                      this.clearInputs();
+
+                });
             }
         });
        
+    }
+
+    clearInputs()
+    {
+        document.getElementById("cedula").value = "";
+        document.getElementById("nombreUsuario").value = "";
+        document.getElementById("contrasena").value = "";
+        document.getElementById("rol").value = "";
     }
 
     render(){

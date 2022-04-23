@@ -1,6 +1,7 @@
 import React from "react";
 import '../user_general/resources/css/contratacion.css';
 import InputMask from 'react-input-mask';
+import Swal from 'sweetalert2';
 
 class Contratacion extends React.Component{
 
@@ -44,11 +45,38 @@ class Contratacion extends React.Component{
                 headers: {
                     'Content-Type': 'application/json'
                 }
-            }).then(res => res.json()).catch(error => console.log("error: " + error))
-            .then(response => console.log("payroll response: " + JSON.stringify(response)))
+            }).then(res => res.json()).catch(error => {
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'error',
+                    title: 'Lo sentimos, algo salió mal',
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
+            })
+            .then(response => {
+                this.clearInputs();
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Empleado contratado satisfactoriamente',
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
+            })
         }
     });
        
+    
+    }
+    clearInputs()
+    {
+        document.getElementById("cedula").value = "";
+        document.getElementById("nombre").value = "";
+        document.getElementById("apellido").value = "";
+        document.getElementById("departamento").value = "";
+        document.getElementById("cargo").value = "";
+        document.getElementById("Salario").value = "";
     }
 
     render(){

@@ -39,6 +39,17 @@ class Login extends React.Component{
                     'error'
                   )
             }else{
+                let lastseen = {
+                    last_seen: new Date()
+                }
+                fetch("http://localhost:4000/api/user/"+ data._id, {
+                    method: "PUT",
+                    body: JSON.stringify(lastseen),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                }).then(res => res.json())
+                .catch(error => console.log("error: " + error));
                 document.cookie = "_id="+data.employee_id+"; path=/";
                 document.cookie = "_rol="+data.rol+"; path=/";
                 this.setState({islogged:true})

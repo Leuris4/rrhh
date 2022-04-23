@@ -10,3 +10,7 @@ h1 {
 button {
     margin-top: 4%;
 }
+
+.err-msg {
+    text-align: center;
+}

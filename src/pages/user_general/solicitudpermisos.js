@@ -1,6 +1,7 @@
 import React from "react";
 import '../user_general/resources/css/solicitudpermisos.css';
 import InputMask from 'react-input-mask';
+import Swal from 'sweetalert2';
 
 
 class solicitudPermisos extends React.Component{
@@ -41,8 +42,33 @@ class solicitudPermisos extends React.Component{
                         'Content-Type': 'application/json'
                     }
                 }).then(res => res.json())
-                .catch(error => console.log("error: " + error))
-                .then(response => console.log("Success: " + JSON.stringify(response)));
+                .catch(error => {
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'error',
+                        title: 'Lo sentimos, algo salió mal',
+                        showConfirmButton: false,
+                        timer: 1500
+                      })
+                })
+                .then(response => {
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Permiso solicitado satisfactoriamente',
+                        showConfirmButton: false,
+                        timer: 1500
+                      })
+                      this.clearInputs();
+                });
+    }
+
+    clearInputs()
+    {
+        document.getElementById("cedula").value = "";
+        document.getElementById("fecha_inicio").value = "";
+        document.getElementById("fecha_fin").value = "";
+        document.getElementById("tipoPermiso").value = "";
     }
 
     render(){

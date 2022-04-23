@@ -9,7 +9,6 @@ class Navbar extends React.Component{
         if(this.props.rol ==="superadmin"){
             return <> 
                 <li><Link to="/crearUsuario">Crear Usuarios</Link></li>
-                <li><Link to="/usuarios">Listado de Usuarios</Link></li>
                 </>
                 
         }else if(this.props.rol ==="admin"){
@@ -30,7 +29,7 @@ class Navbar extends React.Component{
        if(!this.props.islogged){
             return null
        }
-            return (<div className="navMenu">
+            return (<div className="navMenu ocultar">
             <ul>
                 <li><Link to="/inicio">Inicio</Link></li>
                 {this.setMenu()}

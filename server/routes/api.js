@@ -10,7 +10,7 @@ const Payroll = require('../models/payroll');
 
 //Employee Section
 router.get('/employee',function(req,res,next){
-    Employee.find({}).then(function(e){
+    Employee.find({status: true}).then(function(e){
         res.send(e);
     }).catch(next);
 });
@@ -54,6 +54,15 @@ router.get('/employee/dt/:cedula',function(req,res,next){
     }).catch();
 });
 
+router.get('/employee/d/:id',function(req,res,next){
+    Employee.findOne({_id: req.params.id, status: true }).then(function(e){
+       if(e==null){
+           e= []
+       }
+       res.send(e);
+    }).catch();
+});
+
 
 /**
  *  End Employee Section
@@ -76,6 +85,11 @@ router.get('/user/:user/:password',function(req,res,next){
        res.send(e);
     }).catch();
 });
+
+router.put('/user/:id', function(req, res) {
+
+    User.findOneAndUpdate({_id: req.params.id},req.body).catch();
+})
 
 router.post('/user',function(req,res,next){
     User.create(req.body).then(function(e){
